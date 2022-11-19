@@ -5,7 +5,7 @@ import { onAuthStateChanged } from "firebase/auth";
 import { auth } from "../../firebase"
 import axios from "axios";
 
-import Navbar from "../components/Dashboard/Navbar";
+import Navbar from "../components/Dashboard/Navbar"
 import ProductItem from "../components/Dashboard/ProductItem";
 import ShopItem from "../components/Dashboard/ShopItem";
 import Sidebar from "../components/Dashboard/Sidebar";
@@ -22,14 +22,14 @@ export default function Dashboard ( )
     })
     const [itemToEdit, setItemToEdit] = useState({})
 
-    // useEffect(()=>{
-    //     onAuthStateChanged(auth, (user) => {
-    //         if (!user) {
-    //           navigator("/login")
-    //         }
-    //     })
+    useEffect(()=>{
+        onAuthStateChanged(auth, (user) => {
+            if (!user) {
+              navigator("/login")
+            }
+        })
          
-    // }, [])
+    }, [])
 
     useEffect(( ) => {
       
